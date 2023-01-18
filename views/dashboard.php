@@ -1,23 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
-    <link rel="stylesheet" href="style.css"/>
-    <Link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"></Link>
-    <title> Dashboard</title>
-</head>
-
-<body >
     <div class="d-flex shadow-sm bg-light" id="wrapper">
         <div class="" id="sidebar-wrapper">
             <div class="sidebar-heading text-center d-flex flex-column py-4 fs-5 border-bottom mt-5">
                 <div class=" align-items-center">
-                    <img   width="70px" height="70px" src="profil.jpeg" alt="" class="rounded-circle">
+                    <img   width="70px" height="70px" src="./views/assets/img/profil.jpeg" alt="" class="rounded-circle">
         <h3> ELKABLI Amina</h3>
                 </div>
                 <a href="scripts/logout.php" class="btn btn-lg btn-block btn-light my-3 mycolor button1 fs-6 ">Log out</a> </div>
@@ -34,9 +20,7 @@
         </div>
        
   
-        <!-- Sidebar -->
-        <!-- /#sidebar-wrapper -->
-        <!-- Page Content -->
+       
         <div id="page-content-wrapper" class="w-100" style="height: 100vh; overflow: scroll;">
             <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
                 <div class="d-flex align-items-center">
@@ -48,51 +32,43 @@
 
             </nav>
 
-            <div class="container-fluid px-4">
+            <div class="">
                 <div class="row g-3 my-2">
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                             <div>
                                 <h3 class="fs-2">20</h3>
                                 <p class="fs-5">Nombre total des titres</p>
                             </div>
-                            <i class="  uil uil-music fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                            <i class="  uil uil-music fs-1 primary-text border  p-3"></i>
                            
                         </div>
                     </div>
 
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                             <div>
                                 <h3 class="fs-2">20</h3>
                                 <p class="fs-5">Nombre total des artistes</p>
                             </div>
                             <i
-                                class=" uil uil-user fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                                class=" uil uil-user fs-1 primary-text border  p-3"></i>
                                
                         </div>
                     </div>
 
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                             <div>
                                 <h3 class="fs-2">3</h3>
                                 <p class="">Total des admins</p>
                                
                             </div>
-                            <i class="uil uil-user fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                            <i class="uil uil-user fs-1 primary-text border p-3"></i>
                         </div>
                     </div>
 
-                    <div class="col-md-3">
-                        <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
-                            <div>
-                                <h3 class="fs-2">%25</h3>
-                                <p class="fs-5">Increase</p>
-                            </div>
-                            <i class="fas fa-chart-line fs-1 primary-text border rounded-full secondary-bg p-3"></i>
-                        </div>
-                    </div>
+                    
                 </div>
 
                 <div class="row my-5">
@@ -133,19 +109,79 @@
                                        <td><img style="width:60px;" src=""></td>
                                        <td>
                                           <div class="d-flex">
-                                             <button class="btn btn-primary me-1" data-bs-toggle="modal" data-bs-target="#exampleModal10" ;>
+                                             <button class="btn btn-primary me-1" data-bs-toggle="modal" data-bs-target="#exampleModalE" ;>
                                                 Edit
                                              </button>
                                              <form action="" method="POST">
                                                 <input type="hidden" name="id" value=" ">
-                                                <button type="submit" name="delete" class="btn btn-danger">Delete</button>
+                                                <button type="button" name="delete" class="btn btn-danger"data-bs-toggle="modal" data-bs-target="#exampleModal3" >Delete</button>
                                              </form>
                                           </div>
                                           
+                                          
                                        </td>
                                     </tr>
-                              
-      
+                              <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabe3" aria-hidden="true">
+                        <div class="modal-dialog">
+                           <div class="modal-content">
+                              <div class="modal-header">
+                                 <h5 class="modal-title" id="exampleModalLabel">Delete Song</h5>
+                              </div>
+                              <div class="modal-body">
+                                 <form id="form_modaal">
+                                   
+                                    <h3 class="text-danger"> Do you want really to delete this Song</h3>
+                                 </form>
+                              </div>
+                              <div class="modal-footer" id="modal_footer">
+                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                                 <button type="button" class="btn btn-danger" onclick="ajouter()" data-bs-dismiss="modal">Yes</button>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+           
+
+
+
+                     <div class="modal fade" id="exampleModalE" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+           <div class="modal-content">
+              <div class="modal-header">
+                 <h5 class="modal-title" id="exampleModalLabel">ADD+</h5>
+                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body " id="dynamic">
+                 <form action="" method="POST" enctype="multipart/form-data" id="form_modaal">
+                    <h3>Chanson:</h3>
+                    <div class="mb-3">
+                       <label for="recipient-name" class="col-form-label">titre:</label>
+                       <input type="text" class="form-control" id="name" size="60" maxlength="60" name="name" />
+                    </div>
+                    <div class="mb-3">
+                       <label for="recipient-name" class="col-form-label">nom de l'artiste:</label>
+                       <input type="text" class="form-control" id="name" size="60" maxlength="60" name="name" />
+                      
+                    </div>
+     
+                    <div class="mb-3">
+                       <label for="recipient-name" class="col-form-label">album</label>
+                       <input type="text" class="form-control" name="quantity" id="date" />
+                    </div>
+                    <div class="mb-3">
+                       <label for="recipient-name" class="col-form-label">année de création:</label>
+                       <input type="date" accept="image/png ,image/jpg, image/jpeg" name="image" id="image" name="photo">
+                    </div>
+              </div>
+              <div class="modal-footer" id="modal_footer"> 
+                 <button type="submit" class="btn btn-success" name="add">Save</button>
+              </div>
+              </form>
+           </div>
+        </div>
+     </div>
+
+  </div>
                            </tbody>
                         </table>
                      </div>
@@ -196,10 +232,3 @@
      </div>
 
   </div>
-
-    
-</body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-<script src="main.js"></script>
-
-</html>

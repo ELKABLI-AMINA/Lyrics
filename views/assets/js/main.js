@@ -1,21 +1,22 @@
-let confirmemail   = 0;
-let confirmpw      = 0;
-let toggle         = document.getElementById("sidebar-wrapper");
-let email          = document.getElementById("email");
-let password       = document.getElementById("password");
-let login          = document.getElementById("login");
-let dynamic        = document.getElementById("dynamic");
-let validRegex     = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-let passw          = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+let confirmemail          = 0;
+let confirmpw             = 0;
+let toggle                = document.getElementById("sidebar-wrapper");
+let email                 = document.getElementById("email");
+let password              = document.getElementById("password");
+let login                 = document.getElementById("login");
+let dynamic               = document.getElementById("dynamic");
+let validRegex            = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+let passw                 = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
 
-var sideBar        = document.getElementById("wrapper");
-var toggleButton   = document.getElementById("menu-toggle");
+var sideBar               = document.getElementById("wrapper");
+var toggleButton          = document.getElementById("menu-toggle");
 
 toggleButton.onclick = function () {
     sideBar.classList.toggle("toggled");
 };
 
-function validate_email() {
+function validate_email()
+{
     if (email.value == "" || !email.value.match(validRegex)) {
         confirmemail = 0;
         check_sign_in();
@@ -26,7 +27,8 @@ function validate_email() {
 }
 
 
-function validate_pw() {
+function validate_pw()
+{
     if (password.value == "") {
         confirmpw = 0;
         check_sign_in();
@@ -37,7 +39,8 @@ function validate_pw() {
 }
 
 
-function check_sign_in() {
+function check_sign_in()
+{
     if (confirmemail == 1 && confirmpw == 1) {
         login.disabled = false;
     }
@@ -48,7 +51,8 @@ function check_sign_in() {
 
 
 
-function AddLyrics() {
+function AddLyrics()
+{
     dynamic.innerHTML+=`<div><div class="mb-3">
     <hr style="height:3px;border:none;color:#333;background-color:#333" >
     <h3>Chanson:</h3>
@@ -75,6 +79,7 @@ function AddLyrics() {
 }
 
 
-function RemoveLyrics(button) {
+function RemoveLyrics(button)
+{
     button.parentElement.remove();
 }
