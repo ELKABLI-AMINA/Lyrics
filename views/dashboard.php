@@ -1,3 +1,7 @@
+<?php
+   require_once(__DIR__ . "./../models/chanson.php");
+?>
+<script src="https://cdn.ckeditor.com/4.20.1/standard/ckeditor.js"></script>
 
     <div class="d-flex shadow-sm bg-light" id="wrapper">
         <div class="" id="sidebar-wrapper">
@@ -139,19 +143,19 @@
                               </div>
                            </div>
                         </div>
-                     </div>
+        </div>
            
 
 
 
-                     <div class="modal fade" id="exampleModalE" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal fade" id="exampleModalE" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl">
            <div class="modal-content">
               <div class="modal-header">
                  <h5 class="modal-title" id="exampleModalLabel">ADD+</h5>
                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
-              <div class="modal-body " id="dynamic">
+              <div class="modal-body " id="dynamich">
                  <form action="" method="POST" enctype="multipart/form-data" id="form_modaal">
                     <h3>Chanson:</h3>
                     <div class="mb-3">
@@ -192,6 +196,9 @@
     </div>
     <!-- /#page-content-wrapper -->
     </div>
+
+
+    
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl">
            <div class="modal-content">
@@ -203,28 +210,35 @@
                  <form action="" method="POST" enctype="multipart/form-data" id="form_modaal">
                     <h3>Chanson:</h3>
                     <div class="mb-3">
-                       <label for="recipient-name" class="col-form-label">titre:</label>
-                       <input type="text" class="form-control" id="name" size="60" maxlength="60" name="name" />
+                       <label for="recipient-name" class="col-form-label" >titre:</label>
+                       <input type="text" class="form-control" id="name" size="60" maxlength="60" name="titre" />
                     </div>
                     <div class="mb-3">
-                       <label for="recipient-name" class="col-form-label">nom de l'artiste:</label>
-                       <input type="text" class="form-control" id="name" size="60" maxlength="60" name="name" />
+                       <label for="recipient-name" class="col-form-label " >Paroles</label>
+                        <textarea name="content"></textarea> 
+                        <script>
+                          CKEDITOR.replace('content' );
+                        </script> 
+                    </div>
+                    <div class="mb-3">
+                       <label for="recipient-name" class="col-form-label" >nom de l'artiste:</label>
+                       <input type="text" class="form-control" id="name" size="60" maxlength="60" name="nom_artiste" />
                       
                     </div>
      
                     <div class="mb-3">
-                       <label for="recipient-name" class="col-form-label">album</label>
-                       <input type="text" class="form-control" name="quantity" id="date" />
+                       <label for="recipient-name" class="col-form-label" >album</label>
+                       <input type="text" class="form-control" name="album" id="date" />
                     </div>
                     <div class="mb-3">
-                       <label for="recipient-name" class="col-form-label">année de création:</label>
-                       <input type="date" accept="image/png ,image/jpg, image/jpeg" name="image" id="image" name="photo">
+                       <label for="recipient-name" class="col-form-label" >année de création:</label>
+                       <input type="date" name="année_création" id="">
                     </div>
               </div>
               <div class="modal-footer" id="modal_footer">
-                 <button type="button" class="btn btn-primary" onclick="AddLyrics()">Add </button>
+                 <button type="button" id="" class="btn btn-primary" onclick="AddLyrics()">Add </button>
                  
-                 <button type="submit" class="btn btn-success" name="add">Save</button>
+                 <button type="submit" class="btn btn-success" name="save">Save</button>
               </div>
               </form>
            </div>
@@ -232,3 +246,4 @@
      </div>
 
   </div>
+ 

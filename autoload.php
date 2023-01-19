@@ -9,16 +9,9 @@ function autoload($class_name){
                                 'controllers/',
                 );
                 foreach($array_paths as $path){
-                                $file = sprintf($path.'%.php',$class_name); // retourne une chaine formatée
+                                $file = sprintf($path.'%s.php',$class_name); // retourne une chaine formatée
                                 if(is_file($file)){
                                                 include_once $file;
                                 }
                 }
 }
-
-
-
-
-
-
-?>

@@ -11,7 +11,8 @@ let passw                 = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
 var sideBar               = document.getElementById("wrapper");
 var toggleButton          = document.getElementById("menu-toggle");
 
-toggleButton.onclick = function () {
+toggleButton.onclick = function ()
+ {
     sideBar.classList.toggle("toggled");
 };
 
