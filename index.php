@@ -11,7 +11,8 @@ if (isset($_POST['save'])) {
                 $nom_artiste       = $_POST['nom_artiste'];
                 $album             = $_POST['album'];
                 $année_création     = $_POST['année_création'];
-                $home->addChanson($title,$paroles,$nom_artiste,$album,$année_création);
+                $categorie            =$_POST["categorie"];
+                $home->addChanson($title,$paroles,$categorie,$nom_artiste,$album,$année_création);
 
 }
 if(isset($_GET['page'])){

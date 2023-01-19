@@ -6,16 +6,37 @@ class chanson
 
 
 
-    public function AddChanson($title, $paroles, $nom_artiste, $album, $année_création)
+    public function AddChanson($title, $paroles,$categorie, $nom_artiste, $album, $année_création)
 
     {
         $db   = new Database;
         $pdo  = $db->Connect();
 
-        $sql  = "INSERT INTO `chanson`(`title`,`paroles`,`nom_artiste`,`album`,`année_création`) VALUES ( ?,?,?,?,?)";
+        $sql  = "INSERT INTO `chanson`(`title`,`paroles`,`categorie_id`,`nom_artiste`,`album`,`année_création`) VALUES ( ?,?,?,?,?,?)";
         $stmt = $pdo->prepare($sql);
-        $stmt->execute([$title, $paroles, $nom_artiste, $album, $année_création]);
+        $stmt->execute([$title, $paroles,$categorie, $nom_artiste, $album, $année_création]);
     }
+
+
+
+    public  function getChanson()
+    {
+         $db = new Database;
+         $pdo = $db->Connect();
+
+        $sql = "SELECT ch.title as chanson_title,ch.paroles as chanson_paroles, ch.nom_artiste as artist_name, ch.album as chanson_album,ch.année_création as chanson_annee ,cat.title as categorie_title FROM chanson ch inner join categories cat  ON ch.categorie_id = cat.id_categorie ";
+        $stmt = $pdo->prepare($sql); 
+        $stmt->execute();
+        $rows = $stmt->fetchAll();
+        
+         if (!empty($rows)) {
+             return $rows;
+            } else {
+                return false;
+            }
+    }
+
+    
 
 
 
@@ -50,5 +71,19 @@ class chanson
         } else {
             return false;
         }
+    }
+    public function getCat(){
+        $db = new Database;
+         $pdo = $db->Connect();
+        $sql = "SELECT  * FROM  categories";
+        $stmt = $pdo->prepare($sql); 
+        $stmt->execute();
+        $rows = $stmt->fetchAll();
+         if (!empty($rows)) {
+             return $rows;
+            } else {
+                return false;
+            }
+
     }
 }

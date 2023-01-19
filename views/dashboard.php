@@ -1,6 +1,4 @@
-<?php
-   require_once(__DIR__ . "./../models/chanson.php");
-?>
+
 <script src="https://cdn.ckeditor.com/4.20.1/standard/ckeditor.js"></script>
 
     <div class="d-flex shadow-sm bg-light" id="wrapper">
@@ -99,17 +97,20 @@
                            <tbody>
                              
                                   <br> <tr> <h2 class='text-danger'>  No records </h2> </tr>
-                             
+                                  <?php foreach($res as $chanson):?>
+                                    
+
+                                
                                     <tr>
                                        <th scope="row"></th>
                                        <td>
-                                          <p class="text-truncate" style="width:200px"></p>
+                                          <p class="text-truncate" style="width:200px"> <?= $chanson["chanson_title"]?></p>
                                        </td>
                                        <td>
-                                          <p class="text-truncate" style="width:200px"></p>
+                                          <p class="text-truncate" style="width:200px"><?= $chanson["artist_name"]?></p>
                                        </td>
-                                       <td></td>
-                                       <td></td>
+                                       <td><?= $chanson["chanson_album"]?></td>
+                                       <td><?= $chanson["chanson_annee"]?></td>
                                        <td><img style="width:60px;" src=""></td>
                                        <td>
                                           <div class="d-flex">
@@ -125,6 +126,7 @@
                                           
                                        </td>
                                     </tr>
+                                    <?php endforeach?>
                               <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabe3" aria-hidden="true">
                         <div class="modal-dialog">
                            <div class="modal-content">
@@ -206,41 +208,52 @@
                  <h5 class="modal-title" id="exampleModalLabel">ADD+</h5>
                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
-              <div class="modal-body " id="dynamic">
-                 <form action="" method="POST" enctype="multipart/form-data" id="form_modaal">
+              <div class="modal-body " >
+                 <form action="" method="POST" enctype="multipart/form-data"  id="dynamic">
                     <h3>Chanson:</h3>
                     <div class="mb-3">
                        <label for="recipient-name" class="col-form-label" >titre:</label>
-                       <input type="text" class="form-control" id="name" size="60" maxlength="60" name="titre" />
+                       <input type="text" class="form-control" id="name" size="60" maxlength="60" name="titre[]" />
                     </div>
+                    <div class="mb-3" id="categorie">
+                       <label for="recipient-name" class="col-form-label">Categorie:</label>
+                       <select name="categorie[]" >
+                       <?php foreach($cat as $cat1):?>
+                        <option value="<?=$cat1["id_categorie"] ?>"><?=$cat1["title"] ?></option>
+                        <?php endforeach ?>
+                       </select>
+                    </div>
+
                     <div class="mb-3">
                        <label for="recipient-name" class="col-form-label " >Paroles</label>
-                        <textarea name="content"></textarea> 
-                        <script>
-                          CKEDITOR.replace('content' );
-                        </script> 
+                        <textarea name="content[]"></textarea> 
+                       
                     </div>
                     <div class="mb-3">
                        <label for="recipient-name" class="col-form-label" >nom de l'artiste:</label>
-                       <input type="text" class="form-control" id="name" size="60" maxlength="60" name="nom_artiste" />
+                       <input type="text" class="form-control" id="name" size="60" maxlength="60" name="nom_artiste[]" />
                       
                     </div>
      
                     <div class="mb-3">
                        <label for="recipient-name" class="col-form-label" >album</label>
-                       <input type="text" class="form-control" name="album" id="date" />
+                       <input type="text" class="form-control" name="album[]" id="date" />
                     </div>
                     <div class="mb-3">
                        <label for="recipient-name" class="col-form-label" >année de création:</label>
-                       <input type="date" name="année_création" id="">
+                       <input type="date" name="année_création[]" id="">
                     </div>
               </div>
               <div class="modal-footer" id="modal_footer">
                  <button type="button" id="" class="btn btn-primary" onclick="AddLyrics()">Add </button>
                  
-                 <button type="submit" class="btn btn-success" name="save">Save</button>
+                 <button type="submit" class="btn btn-success" name="save">Save All</button>
               </div>
+
               </form>
+              <script>
+                          CKEDITOR.replace('content[]');
+            </script> 
            </div>
         </div>
      </div>

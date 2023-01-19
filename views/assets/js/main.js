@@ -53,29 +53,44 @@ function check_sign_in()
 
 
 function AddLyrics()
-{
-    dynamic.innerHTML+=`<div><div class="mb-3">
+{  
+    dynamic.innerHTML+=`<div>
     <hr style="height:3px;border:none;color:#333;background-color:#333" >
     <h3>Chanson:</h3>
-    <label for="recipient-name" class="col-form-label">titre:</label>
-    <input type="text" class="form-control" id="name" size="60" maxlength="60" name="name" />
+    <div class="mb-3">
+       <label for="recipient-name" class="col-form-label" >titre:</label>
+       <input type="text" class="form-control" id="name" size="60" maxlength="60" name="titre[]" />
+    </div>
+    <div class="mb-3 categorie">
     </div>
     <div class="mb-3">
-    <label for="recipient-name" class="col-form-label">nom de l'artiste:</label>
-    <input type="text" class="form-control" id="name" size="60" maxlength="60" name="name" />
-   
- </div>
-
- <div class="mb-3">
-    <label for="recipient-name" class="col-form-label">album</label>
-    <input type="text" class="form-control" name="quantity" id="date" />
- </div>
- <div class="mb-3">
-    <label for="recipient-name" class="col-form-label">année de création:</label>
-    <input type="date" ">
- </div>
+       <label for="recipient-name" class="col-form-label " >Paroles</label>
+        <textarea name="content[]"></textarea> 
+    </div>
+    <div class="mb-3">
+       <label for="recipient-name" class="col-form-label" >nom de l'artiste:</label>
+       <input type="text" class="form-control" id="name" size="60" maxlength="60" name="nom_artiste[]" />
+    </div>
+    <div class="mb-3">
+       <label for="recipient-name" class="col-form-label" >album</label>
+       <input type="text" class="form-control" name="album[]" id="date" />
+    </div>
+    <div class="mb-3">
+       <label for="recipient-name" class="col-form-label" >année de création:</label>
+       <input type="date" name="année_création[]" id="">
+    </div>
  <button class="btn btn-danger"   onclick="RemoveLyrics(this)" name=>remove</button>
  </div>`;
+ let categ = document.getElementById('categorie');
+let cat =  document.getElementsByClassName('mb-3 categorie');
+
+for(let select of cat){
+    select.innerHTML = categ.innerHTML;
+} 
+
+
+ 
+
 
 }
 
