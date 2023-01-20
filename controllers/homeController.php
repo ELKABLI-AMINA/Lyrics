@@ -34,6 +34,10 @@ class HomeController extends chanson{
                     parent::updateChanson();
                     
                 }
+                public function deleteChanson($id_chanson){
+                    parent::deleteChanson($id_chanson);
+
+                }
                
 }
 ?>

@@ -118,30 +118,18 @@
                                                 Edit
                                              </button>
                                              <form action="" method="POST">
-                                                <input type="hidden" name="id" value=" ">
-                                                <button type="button" name="delete" class="btn btn-danger"data-bs-toggle="modal" data-bs-target="#exampleModal3" >Delete</button>
-                                             </form>
+                                    <input type="hidden" name="id_chanson" value="<?= $chanson["chanson_id"]?>">
+                                 <button type="submit" name="delete" class="btn btn-danger" >Delete</button>
+                                 </form>
                                           </div>
                                           
                                           
                                        </td>
                                     </tr>
                                     <?php endforeach?>
-                              <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabe3" aria-hidden="true">
-                        <div class="modal-dialog">
-                           <div class="modal-content">
-                              <div class="modal-header">
-                                 <h5 class="modal-title" id="exampleModalLabel">Delete Song</h5>
-                              </div>
-                              <div class="modal-body">
-                                 <form id="form_modaal">
-                                   
-                                    <h3 class="text-danger"> Do you want really to delete this Song</h3>
-                                 </form>
-                              </div>
-                              <div class="modal-footer" id="modal_footer">
-                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                                 <button type="button" class="btn btn-danger" onclick="ajouter()" data-bs-dismiss="modal">Yes</button>
+                             
+                                
+                                 
                               </div>
                            </div>
                         </div>
