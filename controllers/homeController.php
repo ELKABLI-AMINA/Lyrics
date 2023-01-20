@@ -1,20 +1,16 @@
 <?php
 
-class HomeController{
-                public $chanson;
-                public function __construct()
-                {
-                                $this->chanson = new chanson;       
-                                
-                }
+class HomeController extends chanson{
+              
+             
 
                 
                 public function index($page,$title){
                                
                                 ob_start();
                                 if($page=="dashboard"){
-                                    $res = $this->chanson->getChanson();
-                                    $cat   =$this->chanson->getCat();
+                                    $res = parent::getChanson();
+                                    $cat   =parent::getCat();
                                 }
                                 include_once "views/".$page.".php";
                                 $content = ob_get_clean();
@@ -23,15 +19,20 @@ class HomeController{
                 public function addChanson($title,$paroles,$categorie,$nom_artiste,$album,$année_création){
                     $count = 0;
                     foreach($title as $title1){
-                        $this->chanson->AddChanson($title[$count],$paroles[$count],$categorie[$count],$nom_artiste[$count],$album[$count],$année_création[$count]);
+                        parent::AddChanson($title[$count],$paroles[$count],$categorie[$count],$nom_artiste[$count],$album[$count],$année_création[$count]);
                         $count++;
                     }
                                 
 
                 }
                 public function getChanson(){
-                    $this->chanson->getChanson();
+                    parent::getChanson();
 
+                }
+
+                public function updateChanson($id_chanson, $title, $paroles, $categorie_id, $nom_artiste, $album, $année_création){
+                    parent::updateChanson();
+                    
                 }
                
 }

@@ -114,7 +114,7 @@
                                        <td><img style="width:60px;" src=""></td>
                                        <td>
                                           <div class="d-flex">
-                                             <button class="btn btn-primary me-1" data-bs-toggle="modal" data-bs-target="#exampleModalE" ;>
+                                             <button class="btn btn-primary me-1" onclick='display(<?= $chanson["chanson_id"]?>, `<?= $chanson["chanson_title"]?>`, `<?= $chanson["chanson_paroles"]?>`, <?= $chanson["categorie_id"]?>, `<?= $chanson["artist_name"]?>`, `<?= $chanson["chanson_album"]?>`, `<?= $chanson["chanson_annee"]?>`)' data-bs-toggle="modal" data-bs-target="#exampleModalE" ;>
                                                 Edit
                                              </button>
                                              <form action="" method="POST">
@@ -162,21 +162,35 @@
                     <h3>Chanson:</h3>
                     <div class="mb-3">
                        <label for="recipient-name" class="col-form-label">titre:</label>
-                       <input type="text" class="form-control" id="name" size="60" maxlength="60" name="name" />
+                       <input type="text" class="form-control" id="titre" size="60" maxlength="60" name="name" />
+                    </div>
+                    <input type="hidden" name="id_chanson" id="id_chanson">
+                    <div class="mb-3" id="categorie">
+                       <label for="recipient-name" class="col-form-label">Categorie:</label>
+                       <select name="categorie[]" id="categorie" >
+                       <?php foreach($cat as $cat1):?>
+                        <option value="<?=$cat1["id_categorie"] ?>"><?=$cat1["title"] ?></option>
+                        <?php endforeach ?>
+                       </select>
+                    </div>
+                    <div class="mb-3">
+                       <label for="recipient-name" class="col-form-label " >Paroles:</label>
+                        <textarea id="paroles" name="content[]"></textarea> 
+                       
                     </div>
                     <div class="mb-3">
                        <label for="recipient-name" class="col-form-label">nom de l'artiste:</label>
-                       <input type="text" class="form-control" id="name" size="60" maxlength="60" name="name" />
+                       <input type="text" class="form-control" id="nom_artiste" size="60" maxlength="60" name="name" />
                       
                     </div>
      
                     <div class="mb-3">
                        <label for="recipient-name" class="col-form-label">album</label>
-                       <input type="text" class="form-control" name="quantity" id="date" />
+                       <input type="text" class="form-control" name="quantity" id="album" />
                     </div>
                     <div class="mb-3">
                        <label for="recipient-name" class="col-form-label">année de création:</label>
-                       <input type="date" accept="image/png ,image/jpg, image/jpeg" name="image" id="image" name="photo">
+                       <input type="date" accept="image/png ,image/jpg, image/jpeg" name="image" id="annee_creation" name="photo">
                     </div>
               </div>
               <div class="modal-footer" id="modal_footer"> 
@@ -225,7 +239,7 @@
                     </div>
 
                     <div class="mb-3">
-                       <label for="recipient-name" class="col-form-label " >Paroles</label>
+                       <label for="recipient-name" class="col-form-label " >Paroles:</label>
                         <textarea name="content[]"></textarea> 
                        
                     </div>

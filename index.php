@@ -6,13 +6,7 @@ $home   = new HomeController();
 $pages  = ['home','add','update','delete','dashboard','login'];
 
 if (isset($_POST['save'])) {
-                $title             = $_POST['titre'];
-                $paroles           = $_POST['content'];
-                $nom_artiste       = $_POST['nom_artiste'];
-                $album             = $_POST['album'];
-                $année_création     = $_POST['année_création'];
-                $categorie            =$_POST["categorie"];
-                $home->addChanson($title,$paroles,$categorie,$nom_artiste,$album,$année_création);
+                $home->addChanson($_POST['titre'],$_POST['content'],$_POST["categorie"],$_POST['nom_artiste'],$_POST['album'],$_POST['année_création']);
 
 }
 if(isset($_GET['page'])){
