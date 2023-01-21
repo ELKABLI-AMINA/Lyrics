@@ -1,6 +1,6 @@
 <?php
 
-class HomeController extends chanson{
+class HomeController extends admin{
               
              
 
@@ -11,6 +11,8 @@ class HomeController extends chanson{
                                 if($page=="dashboard"){
                                     $res = parent::getChanson();
                                     $cat   =parent::getCat();
+                                    $states = $this->statistique();
+                    
                                 }
                                 include_once "views/".$page.".php";
                                 $content = ob_get_clean();
@@ -41,9 +43,25 @@ class HomeController extends chanson{
 
                 public function statistique(){
                    $chansons= parent::getChanson();
-                   $
-
+                   $admins =  parent::getAdmins();
+                   $countChansons = count($chansons);
+                   $countAdmins = count($admins);
+                   $artistes=  array();
+                   $countArtistes= 0;
+                   foreach($chansons as $chanson){
+                    if(!in_array($chanson["artist_name"],$artistes)){
+                        $countArtistes++;
+                        array_push($artistes,$chanson["artist_name"]);
+                    }
+                   }
+                   $states = array(
+                    "admins" => $countAdmins,
+                    "chansons" => $countChansons,
+                    "artistes" => $countArtistes
+                   );
+                   return $states;
                 }
+        
                
 }
 ?>

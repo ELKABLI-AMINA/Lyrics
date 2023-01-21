@@ -39,7 +39,7 @@
                     <div class="col-md-4">
                         <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                             <div>
-                                <h3 class="fs-2">20</h3>
+                                <h3 class="fs-2"><?= $states["chansons"]?></h3>
                                 <p class="fs-5">Nombre total des titres</p>
                             </div>
                             <i class="  uil uil-music fs-1 primary-text border  p-3"></i>
@@ -50,7 +50,7 @@
                     <div class="col-md-4">
                         <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                             <div>
-                                <h3 class="fs-2">20</h3>
+                                <h3 class="fs-2"><?= $states["artistes"]?></h3>
                                 <p class="fs-5">Nombre total des artistes</p>
                             </div>
                             <i
@@ -62,7 +62,7 @@
                     <div class="col-md-4">
                         <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                             <div>
-                                <h3 class="fs-2">3</h3>
+                                <h3 class="fs-2"><?= $states["admins"]?></h3>
                                 <p class="fs-5">Total des admins</p>
                             </div>
                            
@@ -78,20 +78,20 @@
                 </div>
 
                 <div class="row my-5">
-                    <div class="">
-                        <button class="col-md-1"  aria-pressed="true" data-bs-toggle="modal" data-bs-target="#exampleModal">ADD+</button>
+                    <div class="ms-4">
+                        <button class="col-md-1 "  aria-pressed="true" data-bs-toggle="modal" data-bs-target="#exampleModal">ADD+</button>
                        
                         <i class="col-md-1 uil uil-search "></i>
                         <input class="col-md-4"  type="search" name="" id="">
                     </div>
-                    <div class=" table-responsive">
+                    <div class=" table-responsive ms-4">
                         <table class="table mt-4 rounded-2" style="background-color: #fff; color: #000">
                            <thead>
                               <tr>
                                  <th scope="col">#</th>
                                  <th scope="col">Titre</th>
-                                 <th scope="col">Paroles</th>
                                  <th scope="col">Nom de l'artiste</th>
+                                 <th scope="col">album</th>
                                  <th scope="col">année de création</th>
                                  <th></th>
                                  <th scope="col">Tools</th>
@@ -100,7 +100,7 @@
       
                            <tbody>
                              
-                                  <br> <tr> <h2 class='text-danger'>  No records </h2> </tr>
+                                 
                                   <?php foreach($res as $chanson):?>
                                     
 
