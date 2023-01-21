@@ -108,7 +108,7 @@
                     </div>
                     <div class="mb-3">
                        <label for="recipient-name" class="col-form-label">année de création:</label>
-                       <input type="date"  name="année_création" id="annee_creation">
+                       <input  type="number" placeholder="YYYY" min="1980" max="2023"  name="année_création" id="annee_creation">
                     </div>
               </div>
               <div class="modal-footer" id="modal_footer"> 

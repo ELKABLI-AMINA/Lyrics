@@ -6,7 +6,7 @@
             <div class="sidebar-heading text-center d-flex flex-column py-4 fs-5 border-bottom mt-5">
                 <div class=" align-items-center">
                     <img   width="70px" height="70px" src="./views/assets/img/profil.jpeg" alt="" class="rounded-circle">
-        <h3> ELKABLI Amina</h3>
+              <h3> ELKABLI Amina</h3>
                 </div>
                 <a href="scripts/logout.php" class="btn btn-lg btn-block btn-light my-3 mycolor button1 fs-6 ">Log out</a> </div>
 
@@ -29,21 +29,15 @@
                     <i class="bi bi-filter-left primary-text fs-4 me-3" onclick="ShowToggle(this)" id="menu-toggle"></i>
                     <h2 class="fs-2 m-0">Dashboard</h2>
                 </div>
-
-                
-
             </nav>
-            
-
             <div class="">
-            <div class="cover_image " style="background-image: url(./views/assets/img/cover1.png);background-size:cover; border-radius:10px"  >
+                <div class="cover_image " style="background-image: url(./views/assets/img/cover1.png);background-size:cover; border-radius:10px"  >
                     <div class="container mb-4">
                         <div class="row">
                             <div class="col-md-12 p-5 pb-5 text-white">
                                 <h5 class="fw-bolder">Welcome !</h5>
                                 <p class="fs-4 fw-bold">ELKABLI Amina</p>
                                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta ab tempore quo.<br>
-                                   
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque tenetur quod cumque?
                                 </p>
                                 <h6 class="fw-bolder">Search an Article here </h6>
@@ -82,12 +76,7 @@
                                 <h3 class="fs-2"><?= $states["admins"]?></h3>
                                 <p class="fs-5">Total des admins</p>
                             </div>
-                           
-                            <i
-                                class=" uil uil-user fs-1 primary-text border  p-3"></i>
-
-                     </div>
-                           <!-- <i class="uil uil-user fs-1 primary-text border p-3"></i> -->
+                                <i class=" uil uil-user fs-1 primary-text border  p-3"></i>
                         </div>
                     </div>
 
@@ -122,7 +111,7 @@
                            <tbody>
                              
                                  
-                                  <?php foreach($res as $chanson):?>
+                                          <?php foreach($res as $chanson):?>
                                     
 
                                 
@@ -144,40 +133,30 @@
                                                 Edit
                                              </button>
                                              <form action="" method="POST">
-                                    <input type="hidden" name="id_chanson" value="<?= $chanson["chanson_id"]?>">
-                                 <button type="submit" name="delete" class="btn btn-danger" >Delete</button>
-                                 </form>
+                                                 <input type="hidden" name="id_chanson" value="<?= $chanson["chanson_id"]?>">
+                                                 <button type="submit" name="delete" class="btn btn-danger" >Delete</button>
+                                              </form>
                                           </div>
                                           
                                           
                                        </td>
                                     </tr>
-                                    <?php endforeach?>
+                                           <?php endforeach?>
                              
                                 
                                  
-                              </div>
-                           </div>
-                        </div>
-        </div>
-           
-
-
-
-
-    </div>
                            </tbody>
-                        </table>
-                     </div>
+                     </table>
+                    
                 </div>
 
             </div>
         </div>
     </div>
-    <!-- /#page-content-wrapper -->
-    </div>
+    
+   </div>
 
 
 
-    </div>
+</div>
  
