@@ -1,24 +1,5 @@
-:root {
- 
-  --second-text-color: #bbbec5;
-  --second-bg-color: #c1efde;
-}
 
-.primary-text {
-  color: var(--main-text-color);
-}
 
-.second-text {
-  color: var(--second-text-color);
-}
-
-.primary-bg {
-  background-color: var(--main-bg-color);
-}
-
-.secondary-bg {
-  background-color: var(--second-bg-color);
-}
 
 .rounded-full {
   border-radius: 100%;

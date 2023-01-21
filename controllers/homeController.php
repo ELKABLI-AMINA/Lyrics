@@ -31,11 +31,17 @@ class HomeController extends chanson{
                 }
 
                 public function updateChanson($id_chanson, $title, $paroles, $categorie_id, $nom_artiste, $album, $année_création){
-                    parent::updateChanson();
+                    parent::updateChanson($id_chanson, $title, $paroles, $categorie_id, $nom_artiste, $album, $année_création);
                     
                 }
                 public function deleteChanson($id_chanson){
                     parent::deleteChanson($id_chanson);
+
+                }
+
+                public function statistique(){
+                   $chansons= parent::getChanson();
+                   $
 
                 }
                

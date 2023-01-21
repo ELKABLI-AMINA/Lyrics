@@ -7,9 +7,7 @@ class chanson extends database
 
 
     public function AddChanson($title, $paroles,$categorie, $nom_artiste, $album, $année_création)
-
     {
-       
         $pdo  = parent::Connect();
 
         $sql  = "INSERT INTO `chanson`(`title`,`paroles`,`categorie_id`,`nom_artiste`,`album`,`année_création`) VALUES ( ?,?,?,?,?,?)";
@@ -46,7 +44,7 @@ class chanson extends database
         $sql  = "UPDATE chanson SET  `title`=?,`paroles`=?, `categorie_id`=?, `nom_artiste`=?,`album`=?,`année_création`=? WHERE id_chanson=?";
         $stmt = $pdo->prepare($sql);
 
-        if ($stmt->execute([$title, $paroles, $categorie_id, $nom_artiste, $album, $année_création])) {
+        if ($stmt->execute([$title, $paroles, $categorie_id, $nom_artiste, $album, $année_création,$id_chanson])) {
 
             return true;
         } else {

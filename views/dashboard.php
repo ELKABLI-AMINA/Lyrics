@@ -63,10 +63,14 @@
                         <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                             <div>
                                 <h3 class="fs-2">3</h3>
-                                <p class="">Total des admins</p>
-                               
+                                <p class="fs-5">Total des admins</p>
                             </div>
-                            <i class="uil uil-user fs-1 primary-text border p-3"></i>
+                           
+                            <i
+                                class=" uil uil-user fs-1 primary-text border  p-3"></i>
+
+                     </div>
+                           <!-- <i class="uil uil-user fs-1 primary-text border p-3"></i> -->
                         </div>
                     </div>
 
@@ -86,8 +90,8 @@
                               <tr>
                                  <th scope="col">#</th>
                                  <th scope="col">Titre</th>
+                                 <th scope="col">Paroles</th>
                                  <th scope="col">Nom de l'artiste</th>
-                                 <th scope="col">album</th>
                                  <th scope="col">année de création</th>
                                  <th></th>
                                  <th scope="col">Tools</th>
@@ -106,12 +110,13 @@
                                        <td>
                                           <p class="text-truncate" style="width:200px"> <?= $chanson["chanson_title"]?></p>
                                        </td>
+                                      
                                        <td>
                                           <p class="text-truncate" style="width:200px"><?= $chanson["artist_name"]?></p>
                                        </td>
                                        <td><?= $chanson["chanson_album"]?></td>
                                        <td><?= $chanson["chanson_annee"]?></td>
-                                       <td><img style="width:60px;" src=""></td>
+                                       <td></td>
                                        <td>
                                           <div class="d-flex">
                                              <button class="btn btn-primary me-1" onclick='display(<?= $chanson["chanson_id"]?>, `<?= $chanson["chanson_title"]?>`, `<?= $chanson["chanson_paroles"]?>`, <?= $chanson["categorie_id"]?>, `<?= $chanson["artist_name"]?>`, `<?= $chanson["chanson_album"]?>`, `<?= $chanson["chanson_annee"]?>`)' data-bs-toggle="modal" data-bs-target="#exampleModalE" ;>
@@ -138,11 +143,11 @@
 
 
 
-      <div class="modal fade" id="exampleModalE" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal fade" id="exampleModalE" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl">
            <div class="modal-content">
               <div class="modal-header">
-                 <h5 class="modal-title" id="exampleModalLabel">ADD+</h5>
+                 <h5 class="modal-title" id="exampleModalLabel">EDIT</h5>
                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body " id="dynamich">
@@ -150,12 +155,12 @@
                     <h3>Chanson:</h3>
                     <div class="mb-3">
                        <label for="recipient-name" class="col-form-label">titre:</label>
-                       <input type="text" class="form-control" id="titre" size="60" maxlength="60" name="name" />
+                       <input type="text" class="form-control" id="titre" size="60" maxlength="60" name="titre" />
                     </div>
                     <input type="hidden" name="id_chanson" id="id_chanson">
                     <div class="mb-3" id="categorie">
                        <label for="recipient-name" class="col-form-label">Categorie:</label>
-                       <select name="categorie[]" id="categorie" >
+                       <select name="categorie" id="categorie" >
                        <?php foreach($cat as $cat1):?>
                         <option value="<?=$cat1["id_categorie"] ?>"><?=$cat1["title"] ?></option>
                         <?php endforeach ?>
@@ -163,33 +168,33 @@
                     </div>
                     <div class="mb-3">
                        <label for="recipient-name" class="col-form-label " >Paroles:</label>
-                        <textarea id="paroles" name="content[]"></textarea> 
+                        <textarea id="paroles" name="content"></textarea> 
                        
                     </div>
                     <div class="mb-3">
                        <label for="recipient-name" class="col-form-label">nom de l'artiste:</label>
-                       <input type="text" class="form-control" id="nom_artiste" size="60" maxlength="60" name="name" />
+                       <input type="text" class="form-control" id="nom_artiste" size="60" maxlength="60" name="nom_artiste" />
                       
                     </div>
      
                     <div class="mb-3">
                        <label for="recipient-name" class="col-form-label">album</label>
-                       <input type="text" class="form-control" name="quantity" id="album" />
+                       <input type="text" class="form-control" name="album" id="album" />
                     </div>
                     <div class="mb-3">
                        <label for="recipient-name" class="col-form-label">année de création:</label>
-                       <input type="date" accept="image/png ,image/jpg, image/jpeg" name="image" id="annee_creation" name="photo">
+                       <input type="date"  name="année_création" id="annee_creation">
                     </div>
               </div>
               <div class="modal-footer" id="modal_footer"> 
-                 <button type="submit" class="btn btn-success" name="add">Save</button>
+                 <button type="submit" class="btn btn-success" name="edit">Save</button>
               </div>
               </form>
            </div>
         </div>
      </div>
 
-  </div>
+    </div>
                            </tbody>
                         </table>
                      </div>
@@ -260,5 +265,5 @@
         </div>
      </div>
 
-  </div>
+    </div>
  

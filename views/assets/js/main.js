@@ -97,6 +97,8 @@ function RemoveLyrics(button)
     button.parentElement.remove();
 }
 
+
+
 function display(id_chanson, title, paroles, categorie_id, nom_artiste, album, année_création)
 {
     let titre1             =document.getElementById("titre");
