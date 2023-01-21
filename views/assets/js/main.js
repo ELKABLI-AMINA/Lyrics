@@ -84,7 +84,7 @@ function AddLyrics()
   let categ = document.getElementById('categorie');
   let cat =  document.getElementsByClassName('mb-3 categorie');
 
- for(let select of cat){
+ for(let select of cat){ 
     select.innerHTML = categ.innerHTML;
  } 
 

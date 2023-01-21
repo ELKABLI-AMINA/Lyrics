@@ -85,4 +85,21 @@ class chanson extends database
             }
 
     }
+
+
+
+    public function Search($value){
+        $pdo  = parent::Connect();
+
+        $sql = "SELECT  ch.id_chanson as chanson_id , ch.title as chanson_title,ch.paroles as chanson_paroles, ch.nom_artiste as artist_name, ch.album as chanson_album,ch.année_création as chanson_annee ,cat.title as categorie_title ,cat.id_categorie as categorie_id FROM chanson ch inner join categories cat  ON ch.categorie_id = cat.id_categorie  Where ch.title like ? or ch.nom_artiste like ? or ch.année_création = ?";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute(array("%".$value."%","%".$value."%",$value));
+        $rows = $stmt->fetchAll();
+         if (!empty($rows)) {
+             return $rows;
+            } else {
+                return false;
+            }
+
+    }
 }

@@ -12,6 +12,7 @@ class HomeController extends admin{
                                     $res = parent::getChanson();
                                     $cat   =parent::getCat();
                                     $states = $this->statistique();
+                                    include_once "views/includes/alerts.php";
                     
                                 }
                                 include_once "views/".$page.".php";
@@ -60,6 +61,18 @@ class HomeController extends admin{
                     "artistes" => $countArtistes
                    );
                    return $states;
+                }
+
+                public function SearchChanson($value){
+                   
+                    $res = parent::Search($value);
+                    $cat   =parent::getCat();
+                    $states = $this->statistique();
+                    ob_start();
+                    include_once "views/dashboard.php";
+                    $content = ob_get_clean();
+                    include_once "views/home.php";
+                    
                 }
         
                

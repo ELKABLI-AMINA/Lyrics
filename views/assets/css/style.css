@@ -8,7 +8,7 @@
 #sidebar-wrapper {
   height: 100vh;
   min-width: 15rem;
-  margin-left: -16rem;
+  margin-left: -15rem;
   transition-duration: 1s;
 }
 
@@ -18,7 +18,7 @@
 }
 
 #sidebar-wrapper .list-group {
-  min-width: 22rem;
+  min-width: 15rem;
   transition-duration: 1s;
 }
 
@@ -52,6 +52,36 @@
   }
 
   #wrapper.toggled #sidebar-wrapper {
-    margin-left: -16rem;
+    margin-left: -15rem;
   }
+
+}
+
+.loginn{
+  background: white;
+  border-radius: 30px;
+  box-shadow: 2px 3px 5px 3px grey;
+ 
+}
+.imgg{
+  border-top-left-radius:30px;
+  border-bottom-left-radius:30px;
+  height: 500px;
+  width: 100%;
+  
+}
+.btn1{
+  border: none;
+  outline: none;
+  height: 50px;
+  width: 100%;
+  background-color: black;
+  color: white;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.btn1:hover{
+  background: white;
+  border: 1px solid;
+  color: black;
 }

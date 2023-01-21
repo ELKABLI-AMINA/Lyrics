@@ -33,8 +33,25 @@
                 
 
             </nav>
+            
 
             <div class="">
+            <div class="cover_image " style="background-image: url(./views/assets/img/cover1.png);background-size:cover; border-radius:10px"  >
+                    <div class="container mb-4">
+                        <div class="row">
+                            <div class="col-md-12 p-5 pb-5 text-white">
+                                <h5 class="fw-bolder">Welcome !</h5>
+                                <p class="fs-4 fw-bold">ELKABLI Amina</p>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta ab tempore quo.<br>
+                                   
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque tenetur quod cumque?
+                                </p>
+                                <h6 class="fw-bolder">Search an Article here </h6>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="row g-3 my-2">
                     <div class="col-md-4">
                         <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
@@ -78,11 +95,15 @@
                 </div>
 
                 <div class="row my-5">
-                    <div class="ms-4">
+                    <div class="ms-4 d-flex justify-content-between">
                         <button class="col-md-1 "  aria-pressed="true" data-bs-toggle="modal" data-bs-target="#exampleModal">ADD+</button>
                        
-                        <i class="col-md-1 uil uil-search "></i>
-                        <input class="col-md-4"  type="search" name="" id="">
+                       
+                        <form action="" method="post" class="col-8">
+                        <input class="w-95"  type="search" name="search" id="">
+                        <button type="submit"> <i class="col-md-1 uil uil-search "></i></button>
+                        </form>
+                       
                     </div>
                     <div class=" table-responsive ms-4">
                         <table class="table mt-4 rounded-2" style="background-color: #fff; color: #000">
@@ -143,56 +164,6 @@
 
 
 
-          <div class="modal fade" id="exampleModalE" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl">
-           <div class="modal-content">
-              <div class="modal-header">
-                 <h5 class="modal-title" id="exampleModalLabel">EDIT</h5>
-                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body " id="dynamich">
-                 <form action="" method="POST" enctype="multipart/form-data" id="form_modaal">
-                    <h3>Chanson:</h3>
-                    <div class="mb-3">
-                       <label for="recipient-name" class="col-form-label">titre:</label>
-                       <input type="text" class="form-control" id="titre" size="60" maxlength="60" name="titre" />
-                    </div>
-                    <input type="hidden" name="id_chanson" id="id_chanson">
-                    <div class="mb-3" id="categorie">
-                       <label for="recipient-name" class="col-form-label">Categorie:</label>
-                       <select name="categorie" id="categorie" >
-                       <?php foreach($cat as $cat1):?>
-                        <option value="<?=$cat1["id_categorie"] ?>"><?=$cat1["title"] ?></option>
-                        <?php endforeach ?>
-                       </select>
-                    </div>
-                    <div class="mb-3">
-                       <label for="recipient-name" class="col-form-label " >Paroles:</label>
-                        <textarea id="paroles" name="content"></textarea> 
-                       
-                    </div>
-                    <div class="mb-3">
-                       <label for="recipient-name" class="col-form-label">nom de l'artiste:</label>
-                       <input type="text" class="form-control" id="nom_artiste" size="60" maxlength="60" name="nom_artiste" />
-                      
-                    </div>
-     
-                    <div class="mb-3">
-                       <label for="recipient-name" class="col-form-label">album</label>
-                       <input type="text" class="form-control" name="album" id="album" />
-                    </div>
-                    <div class="mb-3">
-                       <label for="recipient-name" class="col-form-label">année de création:</label>
-                       <input type="date"  name="année_création" id="annee_creation">
-                    </div>
-              </div>
-              <div class="modal-footer" id="modal_footer"> 
-                 <button type="submit" class="btn btn-success" name="edit">Save</button>
-              </div>
-              </form>
-           </div>
-        </div>
-     </div>
 
     </div>
                            </tbody>
@@ -207,63 +178,6 @@
     </div>
 
 
-    
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl">
-           <div class="modal-content">
-              <div class="modal-header">
-                 <h5 class="modal-title" id="exampleModalLabel">ADD+</h5>
-                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body " >
-                 <form action="" method="POST" enctype="multipart/form-data"  id="dynamic">
-                    <h3>Chanson:</h3>
-                    <div class="mb-3">
-                       <label for="recipient-name" class="col-form-label" >titre:</label>
-                       <input type="text" class="form-control" id="name" size="60" maxlength="60" name="titre[]" />
-                    </div>
-                    <div class="mb-3" id="categorie">
-                       <label for="recipient-name" class="col-form-label">Categorie:</label>
-                       <select name="categorie[]" >
-                       <?php foreach($cat as $cat1):?>
-                        <option value="<?=$cat1["id_categorie"] ?>"><?=$cat1["title"] ?></option>
-                        <?php endforeach ?>
-                       </select>
-                    </div>
-
-                    <div class="mb-3">
-                       <label for="recipient-name" class="col-form-label " >Paroles:</label>
-                        <textarea name="content[]"></textarea> 
-                       
-                    </div>
-                    <div class="mb-3">
-                       <label for="recipient-name" class="col-form-label" >nom de l'artiste:</label>
-                       <input type="text" class="form-control" id="name" size="60" maxlength="60" name="nom_artiste[]" />
-                      
-                    </div>
-     
-                    <div class="mb-3">
-                       <label for="recipient-name" class="col-form-label" >album</label>
-                       <input type="text" class="form-control" name="album[]" id="date" />
-                    </div>
-                    <div class="mb-3">
-                       <label for="recipient-name" class="col-form-label" >année de création:</label>
-                       <input type="date" name="année_création[]" id="">
-                    </div>
-              </div>
-              <div class="modal-footer" id="modal_footer">
-                 <button type="button" id="" class="btn btn-primary" onclick="AddLyrics()">Add </button>
-                 
-                 <button type="submit" class="btn btn-success" name="save">Save All</button>
-              </div>
-
-              </form>
-              <script>
-                          CKEDITOR.replace('content[]');
-            </script> 
-           </div>
-        </div>
-     </div>
 
     </div>
  
