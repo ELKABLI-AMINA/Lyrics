@@ -7,19 +7,13 @@
                 <div class=" align-items-center">
                     <img   width="70px" height="70px" src="./views/assets/img/profil.jpeg" alt="" class="rounded-circle">
               <h3> ELKABLI Amina</h3>
-                </div>
-                <a href="scripts/logout.php" class="btn btn-lg btn-block btn-light my-3 mycolor button1 fs-6 ">Log out</a> </div>
-
-
+                </div><form action=""method="post">
+                <button type="submit" name="logout" class="btn btn-lg btn-block btn-light my-3 mycolor button1 fs-6 ">Log out</button></form> </div>
       <a href="dashboard" type="submit" class="list-group-item list-group-item-action  <?= $dashStatus ?> "><i class="uil uil-chart-bar fs-4 me-2"></i>Dashboard</a>
       <a href="#" type="submit" class="list-group-item list-group-item-action   <?= $artiStatus ?>"><i class="uil uil-medkit me-2 fs-4"></i>Chansons</a>
       <a href="#" type="submit" class="list-group-item list-group-item-action  <?= $userStatus ?>"><i class="uil uil-stopwatch me-2 fs-4"></i>Artistes</a>
       <a href="#" name="appointments-displayer" type="submit" class="list-group-item list-group-item-action  <?= $autorStatus ?>"><i class="uil uil-bookmark me-2 fs-4"></i>Autors</a>
-
         </div>
-       
-  
-       
         <div id="page-content-wrapper" class="w-100" style="height: 100vh; overflow: scroll;">
             <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
                 <div class="d-flex align-items-center">
@@ -102,7 +96,11 @@
                            <tbody>
                              
                                  
-                                          <?php foreach($res as $chanson):?>
+                                          <?php 
+                                          if(is_array($res)){
+
+                                          
+                                          foreach($res as $chanson){?>
                                     
 
                                 
@@ -132,7 +130,7 @@
                                           
                                        </td>
                                     </tr>
-                                           <?php endforeach?>
+                                           <?php }}else echo "no Record"?>
                              
                                 
                                  
@@ -140,7 +138,7 @@
                      </table>
                     
                 </div>
-                
+
 
         </div>
     </div>

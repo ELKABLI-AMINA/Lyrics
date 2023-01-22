@@ -1,12 +1,11 @@
 
-    <section class="Form  mx-5" style="margin-top: 170px;">
+    <section class="" style="margin-top:10vh">
         <div class="container">
-            <div class="row no-gutters loginn">
+            <div class="row  loginn">
                 <div class="col-lg-5">
-                    <img src="./views/assets/img/cover.jpg"  class="img-fluid imgg" alt="">
+                    <img src="./views/assets/img/cover.jpg"  class="imgg" alt="" style="width:95%;height:auto;margin:auto">
                 </div>
-                <div class="col-lg-7 px-5 pt-5">
-                    <h1 class="font-weight-bold py-3">Logo</h1>
+                <div class="col-lg-7 px-5 mt-5">
                     <h4>Sign into your account</h4>
                     <form method="post">
                         <div class="form-row">
