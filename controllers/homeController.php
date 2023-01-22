@@ -10,7 +10,6 @@ class HomeController{
 
                 
                 public function index($page,$title){
-                               
                                 ob_start();
                                 if($page=="dashboard"){
                                     $res = $this->chanson->getChanson();
