@@ -37,7 +37,7 @@
                                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta ab tempore quo.<br>
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque tenetur quod cumque?
                                 </p>
-                                <h6 class="fw-bolder">Search an Article here </h6>
+                               
                                
                             </div>
                         </div>
@@ -76,41 +76,9 @@
                                 <i class=" uil uil-user fs-1 primary-text border  p-3"></i>
                         </div>
                     </div>
-
-
-                     <br>
-                     <tr>
-                        <h2 class='text-danger'> No records </h2>
-                     </tr>
-                     <?php foreach ($res as $chanson) : ?>
-                        <tr>
-                           <th scope="row"></th>
-                           <td>
-                              <p class="text-truncate" style="width:200px"> <?= $chanson["chanson_title"] ?></p>
-                           </td>
-                           <td>
-                              <p class="text-truncate" style="width:200px"><?= $chanson["artist_name"] ?></p>
-                           </td>
-                           <td><?= $chanson["chanson_album"] ?></td>
-                           <td><?= $chanson["chanson_annee"] ?></td>
-                           <td><img style="width:60px;" src=""></td>
-                           <td>
-                              <div class="d-flex">
-                                 <button class="btn btn-primary me-1" data-bs-toggle="modal" data-bs-target="#exampleModalE" ;>
-                                    Edit
-                                 </button>
-                                 <form action="" method="POST">
-                                    <input type="hidden" name="id" value=" ">
-                                    <button type="button" name="delete" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal3">Delete</button>
-                                 </form>
-                              </div>
-
-
-                <div class="row my-5">
+                    <div class="row my-5">
                     <div class="ms-4 d-flex justify-content-between">
                         <button class="col-md-1 "  aria-pressed="true" data-bs-toggle="modal" data-bs-target="#exampleModal">ADD+</button>
-                       
-                       
                         <form action="" method="post" class="col-8">
                         <input class="w-95"  type="search" name="search" id="">
                         <button type="submit"> <i class="col-md-1 uil uil-search "></i></button>
@@ -172,8 +140,8 @@
                      </table>
                     
                 </div>
+                
 
-            </div>
         </div>
     </div>
     

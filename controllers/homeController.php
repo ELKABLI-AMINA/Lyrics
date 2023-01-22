@@ -6,11 +6,13 @@ class HomeController extends admin{
 
                 
                 public function index($page,$title){
+                                if($page!="login")   $this->checkAuth();
+                               
                                 ob_start();
                                 if($page=="dashboard"){
-                                    $res = parent::getChanson();
-                                    $cat   =parent::getCat();
-                                    $states = $this->statistique();
+                                    $res     = parent::getChanson();
+                                    $cat     =parent::getCat();
+                                    $states  = $this->statistique();
                                     include_once "views/includes/alerts.php";
                     
                                 }
@@ -42,12 +44,12 @@ class HomeController extends admin{
                 }
 
                 public function statistique(){
-                   $chansons= parent::getChanson();
-                   $admins =  parent::getAdmins();
-                   $countChansons = count($chansons);
-                   $countAdmins = count($admins);
-                   $artistes=  array();
-                   $countArtistes= 0;
+                   $chansons        = parent::getChanson();
+                   $admins          =  parent::getAdmins();
+                   $countChansons   = count($chansons);
+                   $countAdmins     = count($admins);
+                   $artistes        =  array();
+                   $countArtistes   = 0;
                    foreach($chansons as $chanson){
                     if(!in_array($chanson["artist_name"],$artistes)){
                         $countArtistes++;
@@ -64,14 +66,30 @@ class HomeController extends admin{
 
                 public function SearchChanson($value){
                    
-                    $res = parent::Search($value);
-                    $cat   =parent::getCat();
-                    $states = $this->statistique();
+                    $res     = parent::Search($value);
+                    $cat     =parent::getCat();
+                    $states  = $this->statistique();
                     ob_start();
                     include_once "views/dashboard.php";
                     $content = ob_get_clean();
                     include_once "views/home.php";
                     
+                }
+
+                public function login($email,$password){
+                   $adminInfo = parent ::login($email,$password);
+                  
+                   if($adminInfo){
+                    $_SESSION['admin_id'] = $adminInfo['id_admin'];
+                    header('location:dashboard');
+                   }
+                   else{
+                    header('location:login');
+
+                   }
+                }
+                public function checkAuth(){
+                    if(!isset($_SESSION["admin_id"]))   header('location:./login');
                 }
         
                

@@ -16,6 +16,20 @@ class admin extends chanson{
             }
     }
 
+    public function login($email, $password){
+        $pdo  = parent::Connect();
+        $sql = "SELECT * FROM admins WHERE email=? and password=?";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([$email, $password]);
+        $row = $stmt->fetch();
+        if (!empty($row)) {
+            return $row;
+        } else {
+            return false;
+        }
+
+    }
+
 
 
 

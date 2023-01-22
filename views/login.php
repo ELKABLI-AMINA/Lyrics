@@ -8,20 +8,20 @@
                 <div class="col-lg-7 px-5 pt-5">
                     <h1 class="font-weight-bold py-3">Logo</h1>
                     <h4>Sign into your account</h4>
-                    <form >
+                    <form method="post">
                         <div class="form-row">
                             <div class="col-lg-7">
-                                <input type="email" placeholder="Email-Address" name="" id="email" class="form-control my-3 p-4" onkeyup="validate_email()">
+                                <input type="email" placeholder="Email-Address" name="email" id="email" class="form-control my-3 p-4" onkeyup="validate_email()">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col-lg-7">
-                                <input type="password" placeholder="*******" name="" id="password" class="form-control my-3 p-4" onkeyup="validate_pw()">
+                                <input type="password" placeholder="*******" name="password" id="password" class="form-control my-3 p-4" onkeyup="validate_pw()">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col-lg-7">
-                                <button class="btn1 mt-3 mb-5" id="login"   type="submit" onclick="show_Sign_in()" disabled>Login</button>
+                                <button class="btn1 mt-3 mb-5" id="login" name="login"  type="submit" onclick="show_Sign_in()" disabled>Login</button>
                             </div>
                         </div>
                         <a href="#">Forgot password</a>
