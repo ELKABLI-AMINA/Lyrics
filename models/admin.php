@@ -1,6 +1,6 @@
 <?php
 
-class admin extends chanson{
+class admin extends database{
     public  function getAdmins()
     {
         $pdo  = parent::Connect();
@@ -24,7 +24,7 @@ class admin extends chanson{
         $row = $stmt->fetch();
         if (!empty($row)) {
             return $row;
-        } else {
+        } else{
             return false;
         }
 

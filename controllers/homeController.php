@@ -6,7 +6,7 @@ class HomeController{
 
                 public function __construct(){
                     $this->chansonModel = new chanson;
-                    $this->adminModel=new admin;
+                    $this->adminModel   =new admin;
                 }
     
                
@@ -30,19 +30,28 @@ class HomeController{
 
                 public function statistique(){
                    $chansons        = $this->chansonModel->getChanson();
-                   $admins          = $this->adminModel->getAdmins();
-                   $countChansons   = count($chansons);
+                   $admins          = $this->adminModel->getAdmins(); // return  an array
+                   if(is_array($chansons)){
+                     $countChansons   = count($chansons);
+                   }
+                   else{
+                    $countChansons=0;
+                   }
+                    
                    $countAdmins     = count($admins);
                    $artistes        =  array();
                    $countArtistes   = 0;
-                   foreach($chansons as $chanson){
+                   if(is_array($chansons)){
+                    foreach($chansons as $chanson){
                     if(!in_array($chanson["artist_name"],$artistes)){
                         $countArtistes++;
                         array_push($artistes,$chanson["artist_name"]);
                     }
                    }
+                   }
+                   
                    $states = array(
-                    "admins" => $countAdmins,
+                    "admins"   => $countAdmins,
                     "chansons" => $countChansons,
                     "artistes" => $countArtistes
                    );
@@ -51,12 +60,15 @@ class HomeController{
                 public function checkAuth(){
                     if(!isset($_SESSION["admin_id"]))   header('location:./login');
                 }
+
+
                 public function SearchChanson($value){
                    
-                    $res     = $this->chansonModel->Search($value);
-                    $cat     = $this->chansonModel->getCat();
-                    $states  = $this->statistique();
+                    $res        = $this->chansonModel->Search($value);
+                    $cat        = $this->chansonModel->getCat();
+                    $states     = $this->statistique();
                     ob_start();
+                    include_once "views/includes/alerts.php";
                     include_once "views/dashboard.php";
                     $content = ob_get_clean();
                     include_once "views/home.php";

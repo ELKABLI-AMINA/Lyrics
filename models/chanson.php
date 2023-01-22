@@ -1,6 +1,6 @@
 <?php
 
-class chanson extends database
+class chanson extends categorie
 {
 
 
@@ -58,11 +58,9 @@ class chanson extends database
     {
         $pdo  = parent::Connect();
      
-        $sql  = "DELETE FROM `chanson` WHERE id_chanson=:id_chanson";
+        $sql  = "DELETE FROM `chanson` WHERE id_chanson=?";
         $stmt = $pdo->prepare($sql);
-
-        $stmt->bindParam(":id_chanson",  $id_chanson);
-        if ($stmt->execute()) {
+        if ($stmt->execute([$id_chanson])) {
             return true;
         } else {
             return false;
@@ -70,30 +68,16 @@ class chanson extends database
     }
 
     
-    public function getCat(){
-
-        $pdo  = parent::Connect();
-
-        $sql = "SELECT  * FROM  categories";
-        $stmt = $pdo->prepare($sql); 
-        $stmt->execute();
-        $rows = $stmt->fetchAll();
-         if (!empty($rows)) {
-             return $rows;
-            } else {
-                return false;
-            }
-
-    }
+   
 
 
 
     public function Search($value){
         $pdo  = parent::Connect();
 
-        $sql = "SELECT  ch.id_chanson as chanson_id , ch.title as chanson_title,ch.paroles as chanson_paroles, ch.nom_artiste as artist_name, ch.album as chanson_album,ch.année_création as chanson_annee ,cat.title as categorie_title ,cat.id_categorie as categorie_id FROM chanson ch inner join categories cat  ON ch.categorie_id = cat.id_categorie  Where ch.title like ? or ch.nom_artiste like ? or ch.année_création = ?";
+        $sql = "SELECT  ch.id_chanson as chanson_id , ch.title as chanson_title, ch.paroles as chanson_paroles, ch.nom_artiste as artist_name, ch.album as chanson_album,ch.année_création as chanson_annee ,cat.title as categorie_title ,cat.id_categorie as categorie_id FROM chanson ch inner join categories cat  ON ch.categorie_id = cat.id_categorie  Where ch.title like ? or ch.nom_artiste like ? or ch.année_création = ?";
         $stmt = $pdo->prepare($sql);
-        $stmt->execute(array("%".$value."%","%".$value."%",$value));
+        $stmt->execute(array("%".$value."%" ,"%".$value."%" ,$value));
         $rows = $stmt->fetchAll();
          if (!empty($rows)) {
              return $rows;

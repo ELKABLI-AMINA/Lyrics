@@ -82,7 +82,7 @@ function AddLyrics()
  <button class="btn btn-danger"   onclick="RemoveLyrics(this)" name=>remove</button>
  </div>`;
   let categ = document.getElementById('categorie');
-  let cat =  document.getElementsByClassName('mb-3 categorie');
+  let cat   =  document.getElementsByClassName('mb-3 categorie');
 
  for(let select of cat){ 
     select.innerHTML = categ.innerHTML;
@@ -102,17 +102,22 @@ function RemoveLyrics(button)
 function display(id_chanson, title, paroles, categorie_id, nom_artiste, album, année_création)
 {
     let titre1             =document.getElementById("titre");
-    let paroles1           =document.getElementById("paroles");
     let categorie1         =document.getElementById("categorie");
     let nom_artiste1       =document.getElementById("nom_artiste");
     let album1             =document.getElementById("album");
     let annee_creation1     =document.getElementById("annee_creation");
 
-    document.getElementById("id_chanson").value = id_chanson;
+ 
     titre1.value            =title;
-    paroles1.value          = paroles; 
+    CKEDITOR.replace( 'content' );
+    CKEDITOR.instances["paroles"].setData(paroles);
     categorie1.value        =categorie_id;
     nom_artiste1.value      =nom_artiste;
     album1.value            =album;
     annee_creation1.value   =année_création;
+    document.getElementById("id_chanson").value = id_chanson;
+}
+function show(value){
+    document.getElementById("contenue").innerHTML =value;
+
 }

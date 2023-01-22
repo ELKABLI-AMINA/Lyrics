@@ -118,3 +118,19 @@
            </div>
         </div>
      </div>
+
+
+     <!-- Button trigger modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="showParoles" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content p-5" style="min-height:200px;" >
+  <p id="contenue" style="word-wrap: break-word;">
+
+  </p>
+   
+</div>
+  
+</div>
+</div>

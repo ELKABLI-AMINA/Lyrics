@@ -2,6 +2,8 @@
 
 class userController{
                 public $adminModel;
+
+
                 public function __construct(){
                                 $this->adminModel = new admin;
                 }
@@ -10,6 +12,7 @@ class userController{
                   
                    if($adminInfo){
                     $_SESSION['admin_id'] = $adminInfo['id_admin'];
+                    $_SESSION["admin_name"] =  $adminInfo['name'];
                     header('location:dashboard');
                    }
                    else{

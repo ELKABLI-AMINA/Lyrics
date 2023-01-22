@@ -1,13 +1,13 @@
 <?php
-session_start();
-spl_autoload_register('autoload'); 
+session_start(); 
+spl_autoload_register('autoload');  
 function autoload($class_name){
                 $array_paths = array(
                                 'models/',
                                 'controllers/',
                                 'database/'
                 );
-                $count =0;
+             
 
                 foreach($array_paths as $path){
                     
@@ -16,13 +16,7 @@ function autoload($class_name){
                                                 include_once $file;
                                 
                                 }
-                                else {
-                                    $count++;
-                                    
-                                }
-                }if ($count==(3)){
-                    echo "not found";
-                }
+                            }
 
 }
 
