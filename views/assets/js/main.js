@@ -52,41 +52,21 @@ function check_sign_in()
 function AddLyrics()
 {  
     let firstForm = document.getElementById("article-form");
-    // clone the first form
     let newForm = firstForm.cloneNode(true);
-    let div = newForm.children;
-    // clean the values of the input fields in the new form
-    let inputs = newForm.getElementsByTagName("input");
-    for (let i = 0; i < inputs.length; i++) {
-      inputs[i].value = "";
-    }
     newForm.innerHTML+=`<button type="button" class="btn btn-danger btn-sm mt-2" onclick="RemoveLyrics(this)">Delete</button>`;
     // append the new form to the page
     document.getElementById("dynamic").appendChild(newForm);
-
-
   let categ = document.getElementById('categorie');
   let cat   =  document.getElementsByClassName('mb-3 categorie');
  for(let select of cat){ 
     select.innerHTML = categ.innerHTML;
  }
- tinymce.init({
-    selector: '#content',
-    plugins:  'link image',
-    toolbar:  'undo redo | bold italic | alignleft aligncenter alignright |color| link image',
-    content_css: 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css'
-});
 }
 function RemoveLyrics(button)
 {
     button.parentElement.remove();
 }
-tinymce.init({
-    selector: '#content',
-    plugins:  'link image',
-    toolbar:  'undo redo | bold italic | alignleft aligncenter alignright |color| link image',
-    content_css: 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css'
-});
+
 function display(id_chanson, title, paroles, categorie_id, nom_artiste, album, année_création)
 {
     let titre1             = document.getElementById("titre");
@@ -94,18 +74,14 @@ function display(id_chanson, title, paroles, categorie_id, nom_artiste, album, a
     let nom_artiste1       = document.getElementById("nom_artiste");
     let album1             = document.getElementById("album");
     let annee_creation1    = document.getElementById("annee_creation");
-    titre1.value           =title;
-    categorie1.value       =categorie_id;
-    nom_artiste1.value     =nom_artiste;
-    album1.value           =album;
+    document.getElementById("content2").value = paroles;
+    titre1.value           = title;
+    categorie1.value       = categorie_id;
+    nom_artiste1.value     = nom_artiste;
+    album1.value           = album;
     annee_creation1.value  =année_création;
     document.getElementById("id_chanson").value = id_chanson;
-    tinymce.init({
-        selector: '#content2',
-        plugins: 'link image',
-        toolbar: 'undo redo | bold italic | alignleft aligncenter alignright |color| link image',
-        content_css: 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css'
-    });
+   
 }
 function show(value){
     document.getElementById("contenue").innerHTML =value;

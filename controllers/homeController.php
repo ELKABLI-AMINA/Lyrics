@@ -12,10 +12,12 @@ class HomeController{
                
     
                 public function index($page){
-                                if($page!="login")   $this->checkAuth();
-                               $title="home";
+                    ////
+                                if($page=="dashboard")  $this->checkAuth();
+                                ////
                                 ob_start();
                                 if($page=="dashboard"){
+                                   
                                     $res     =  $this->chansonModel->getChanson();
                                     $cat     = $this->chansonModel->getCat();
                                     $states  = $this->statistique();
@@ -24,19 +26,22 @@ class HomeController{
                                 }
                                 include_once "views/".$page.".php";
                                 $content = ob_get_clean();
+                                $title=$page;
                                 include_once "views/home.php";
                 }   
               
 
                 public function statistique(){
                    $chansons        = $this->chansonModel->getChanson();
-                   $admins          = $this->adminModel->getAdmins(); // return  an array
+                   $admins          = $this->adminModel->getAdmins(); 
+                   ////
                    if(is_array($chansons)){
-                     $countChansons   = count($chansons);
+                     $countChansons   = count($chansons); // count marche seulement aves array return un nb
                    }
                    else{
                     $countChansons=0;
                    }
+                   ////
                     
                    $countAdmins     = count($admins);
                    $artistes        =  array();
@@ -57,6 +62,8 @@ class HomeController{
                    );
                    return $states;
                 }
+
+
                 public function checkAuth(){
                     if(!isset($_SESSION["admin_id"]))   header('location:./login');
                 }

@@ -25,8 +25,8 @@
                     </div>
 
                     <div class="mb-3">
-                       <label for="recipient-name" class="col-form-label " >Paroles:</label>
-                        <textarea name="content[]" id="content"></textarea> 
+                        <label for="recipient-name" class="col-form-label " >Paroles:</label><br>
+                        <textarea name="content[]" rows="10" id="content" cols="" style="width: 90%;"></textarea>
                        
                     </div>
                     <div class="mb-3">
@@ -77,7 +77,7 @@
               </div>
               <div class="modal-body " id="dynamich">
                  <form action="" method="POST" enctype="multipart/form-data" id="form_modaal">
-                    <h3>Chanson:</h3>
+                    <h3>Chanson: </h3>
                     <div class="mb-3">
                        <label for="recipient-name" class="col-form-label">titre:</label>
                        <input type="text" class="form-control" id="titre" size="60" maxlength="60" name="titre" />
@@ -93,15 +93,12 @@
                     </div>
                     <div class="mb-3">
                        <label for="recipient-name" class="col-form-label " >Paroles:</label>
-                        <textarea id="paroles" name="content" id="content2"></textarea> 
-                       
+                        <textarea  name="content" rows="10" cols="" style="width: 90%;" id="content2"></textarea> 
                     </div>
                     <div class="mb-3">
                        <label for="recipient-name" class="col-form-label">nom de l'artiste:</label>
                        <input type="text" class="form-control" id="nom_artiste" size="60" maxlength="60" name="nom_artiste" />
-                      
                     </div>
-     
                     <div class="mb-3">
                        <label for="recipient-name" class="col-form-label">album</label>
                        <input type="text" class="form-control" name="album" id="album" />

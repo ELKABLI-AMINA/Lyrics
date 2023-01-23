@@ -5,7 +5,7 @@ class userController{
 
 
                 public function __construct(){
-                                $this->adminModel = new admin;
+                                $this->adminModel = new admin; // injection de dependances (DI)
                 }
                 public function login($email,$password){
                    $adminInfo = $this->adminModel->login($email,$password);
