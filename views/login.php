@@ -23,8 +23,7 @@
                                 <button class="btn1 mt-3 mb-5" id="login" name="login"  type="submit" onclick="show_Sign_in()" disabled>Login</button>
                             </div>
                         </div>
-                        <a href="#">Forgot password</a>
-                        <p>Don't have an account? <a href="#">Register here</a></p>
+                        
                     </form>
 
                 </div>

@@ -13,13 +13,13 @@ class HomeController{
     
                 public function index($page){
                                 if($page!="login")   $this->checkAuth();
-                               
+                               $title="home";
                                 ob_start();
                                 if($page=="dashboard"){
                                     $res     =  $this->chansonModel->getChanson();
                                     $cat     = $this->chansonModel->getCat();
                                     $states  = $this->statistique();
-                                    include_once "views/includes/alerts.php";
+                                    include_once "views/includes/forms.php";
                     
                                 }
                                 include_once "views/".$page.".php";
@@ -68,7 +68,7 @@ class HomeController{
                     $cat        = $this->chansonModel->getCat();
                     $states     = $this->statistique();
                     ob_start();
-                    include_once "views/includes/alerts.php";
+                    include_once "views/includes/forms.php";
                     include_once "views/dashboard.php";
                     $content = ob_get_clean();
                     include_once "views/home.php";

@@ -7,8 +7,6 @@ function autoload($class_name){
                                 'controllers/',
                                 'database/'
                 );
-             
-
                 foreach($array_paths as $path){
                     
                                 $file = sprintf($path.'%s.php',$class_name); // retourne une chaine formatée  exemple $file = models/chanson.php

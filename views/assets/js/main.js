@@ -49,75 +49,69 @@ function check_sign_in()
         login.disabled = true;
     }
 }
-
-
-
 function AddLyrics()
 {  
-    dynamic.innerHTML+=`<div>
-    <hr style="height:3px;border:none;color:#333;background-color:#333" >
-    <h3>Chanson:</h3>
-    <div class="mb-3">
-       <label for="recipient-name" class="col-form-label" >titre:</label>
-       <input type="text" class="form-control" id="name" size="60" maxlength="60" name="titre[]" />
-    </div>
-    <div class="mb-3 categorie">
-    </div>
-    <div class="mb-3">
-       <label for="recipient-name" class="col-form-label " >Paroles</label>
-        <textarea name="content[]"></textarea> 
-    </div>
-    <div class="mb-3">
-       <label for="recipient-name" class="col-form-label" >nom de l'artiste:</label>
-       <input type="text" class="form-control" id="name" size="60" maxlength="60" name="nom_artiste[]" />
-    </div>
-    <div class="mb-3">
-       <label for="recipient-name" class="col-form-label" >album</label>
-       <input type="text" class="form-control" name="album[]" id="date" />
-    </div>
-    <div class="mb-3">
-       <label for="recipient-name" class="col-form-label" >année de création:</label>
-       <input  type="number" placeholder="YYYY" min="1980" max="2023" name="année_création[]" id="">
-    </div>
- <button class="btn btn-danger"   onclick="RemoveLyrics(this)" name=>remove</button>
- </div>`;
+    let firstForm = document.getElementById("article-form");
+    // clone the first form
+    let newForm = firstForm.cloneNode(true);
+    let div = newForm.children;
+    // clean the values of the input fields in the new form
+    let inputs = newForm.getElementsByTagName("input");
+    for (let i = 0; i < inputs.length; i++) {
+      inputs[i].value = "";
+    }
+    newForm.innerHTML+=`<button type="button" class="btn btn-danger btn-sm mt-2" onclick="RemoveLyrics(this)">Delete</button>`;
+    // append the new form to the page
+    document.getElementById("dynamic").appendChild(newForm);
+
+
   let categ = document.getElementById('categorie');
   let cat   =  document.getElementsByClassName('mb-3 categorie');
-
  for(let select of cat){ 
     select.innerHTML = categ.innerHTML;
- } 
-
-
+ }
+ tinymce.init({
+    selector: '#content',
+    plugins:  'link image',
+    toolbar:  'undo redo | bold italic | alignleft aligncenter alignright |color| link image',
+    content_css: 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css'
+});
 }
-
-
 function RemoveLyrics(button)
 {
     button.parentElement.remove();
 }
-
-
-
+tinymce.init({
+    selector: '#content',
+    plugins:  'link image',
+    toolbar:  'undo redo | bold italic | alignleft aligncenter alignright |color| link image',
+    content_css: 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css'
+});
 function display(id_chanson, title, paroles, categorie_id, nom_artiste, album, année_création)
 {
-    let titre1             =document.getElementById("titre");
-    let categorie1         =document.getElementById("categorie");
-    let nom_artiste1       =document.getElementById("nom_artiste");
-    let album1             =document.getElementById("album");
-    let annee_creation1     =document.getElementById("annee_creation");
-
- 
-    titre1.value            =title;
-    CKEDITOR.replace( 'content' );
-    CKEDITOR.instances["paroles"].setData(paroles);
-    categorie1.value        =categorie_id;
-    nom_artiste1.value      =nom_artiste;
-    album1.value            =album;
-    annee_creation1.value   =année_création;
+    let titre1             = document.getElementById("titre");
+    let categorie1         = document.getElementById("categorie");
+    let nom_artiste1       = document.getElementById("nom_artiste");
+    let album1             = document.getElementById("album");
+    let annee_creation1    = document.getElementById("annee_creation");
+    titre1.value           =title;
+    categorie1.value       =categorie_id;
+    nom_artiste1.value     =nom_artiste;
+    album1.value           =album;
+    annee_creation1.value  =année_création;
     document.getElementById("id_chanson").value = id_chanson;
+    tinymce.init({
+        selector: '#content2',
+        plugins: 'link image',
+        toolbar: 'undo redo | bold italic | alignleft aligncenter alignright |color| link image',
+        content_css: 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css'
+    });
 }
 function show(value){
     document.getElementById("contenue").innerHTML =value;
 
 }
+
+
+
+

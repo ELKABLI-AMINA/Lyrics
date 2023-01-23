@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
     <link rel="stylesheet" href="http://localhost/Lyrics/views/assets/css/style.css"/>
     <Link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"></Link>
-    <script src="https://cdn.ckeditor.com/4.20.1/standard/ckeditor.js"></script>
+    <script src="https://cdn.tiny.cloud/1/ypzaobdfh51yafviec0ky10j3rnvii9y9684rp7u9516r708/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
     <title>  <?= $page?></title>
 </head>
 <body>

@@ -4,11 +4,12 @@
         <div class="modal-dialog modal-xl">
            <div class="modal-content">
               <div class="modal-header">
-                 <h5 class="modal-title" id="exampleModalLabel">ADD+</h5>
+                 <h5 class="modal-title" id="exampleModalLabel">ADD</h5>
                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body " >
                  <form action="" method="POST" enctype="multipart/form-data"  id="dynamic">
+                  <div id="article-form">
                     <h3>Chanson:</h3>
                     <div class="mb-3">
                        <label for="recipient-name" class="col-form-label" >titre:</label>
@@ -25,7 +26,7 @@
 
                     <div class="mb-3">
                        <label for="recipient-name" class="col-form-label " >Paroles:</label>
-                        <textarea name="content[]"></textarea> 
+                        <textarea name="content[]" id="content"></textarea> 
                        
                     </div>
                     <div class="mb-3">
@@ -43,6 +44,7 @@
                        <input  type="number" placeholder="YYYY" min="1980" max="2023" name="année_création[]" id="">
                     </div>
               </div>
+              </div>
               <div class="modal-footer" id="modal_footer">
                  <button type="button" id="" class="btn btn-primary" onclick="AddLyrics()">Add </button>
                  
@@ -50,9 +52,7 @@
               </div>
 
               </form>
-              <script>
-                          CKEDITOR.replace('content[]');
-            </script> 
+              
            </div>
         </div>
      </div>
@@ -93,7 +93,7 @@
                     </div>
                     <div class="mb-3">
                        <label for="recipient-name" class="col-form-label " >Paroles:</label>
-                        <textarea id="paroles" name="content"></textarea> 
+                        <textarea id="paroles" name="content" id="content2"></textarea> 
                        
                     </div>
                     <div class="mb-3">
@@ -118,6 +118,9 @@
            </div>
         </div>
      </div>
+     <script>
+      
+     </script>
 
 
      <!-- Button trigger modal -->

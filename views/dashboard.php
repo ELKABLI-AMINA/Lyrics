@@ -1,5 +1,3 @@
-<script src="https://cdn.ckeditor.com/4.20.1/standard/ckeditor.js"></script>
-
 
     <div class="d-flex shadow-sm bg-light" id="wrapper">
         <div class="" id="sidebar-wrapper">
@@ -31,8 +29,6 @@
                                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta ab tempore quo.<br>
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque tenetur quod cumque?
                                 </p>
-                               
-                               
                             </div>
                         </div>
                     </div>
@@ -41,11 +37,10 @@
                     <div class="col-md-4">
                         <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                             <div>
-                                <h3 class="fs-2"><?= $states["chansons"]?></h3>
+                                <h3 class="fs-2"><?= $states["chansons"]?></h3> 
                                 <p class="fs-5">Nombre total des titres</p>
                             </div>
                             <i class="  uil uil-music fs-1 primary-text border  p-3"></i>
-                           
                         </div>
                     </div>
 
@@ -73,7 +68,7 @@
                     <div class="row my-5">
                     <div class="ms-4 d-flex justify-content-between">
                         <button class="col-md-1 "  aria-pressed="true" data-bs-toggle="modal" data-bs-target="#exampleModal">ADD+</button>
-                        <form action="" method="post" class="col-8">
+                        <form action="" method="post" class="">
                           <input class="w-95"  type="search" name="search" id="">
                           <button type="submit"> <i class="col-md-1 uil uil-search "></i></button>
                         </form>
@@ -93,18 +88,10 @@
                                  <th scope="col">Tools</th>
                               </tr>
                            </thead>
-      
-                           <tbody>
-                             
-                                 
+                            <tbody>
                                           <?php 
                                           if(is_array($res)){
-
-                                          
                                           foreach($res as $chanson){?>
-                                    
-
-                                
                                     <tr>
                                        <th scope="row"></th>
                                        <td>
@@ -127,26 +114,14 @@
                                                  <input type="hidden" name="id_chanson" value="<?= $chanson["chanson_id"]?>">
                                                  <button type="submit" name="delete" class="btn btn-danger" >Delete</button>
                                               </form>
-                                          </div>
-                                          
-                                          
+                                          </div>   
                                        </td>
                                     </tr>
-                                           <?php }}else echo "no Record"?>
-                             
-                                
-                                 
+                                           <?php }}else echo "no Record"?>    
                            </tbody>
                      </table>
-                    
                 </div>
-
-
         </div>
     </div>
-    
    </div>
-
-
-
 </div>
