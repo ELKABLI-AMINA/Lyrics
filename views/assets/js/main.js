@@ -56,11 +56,6 @@ function AddLyrics()
     newForm.innerHTML+=`<button type="button" class="btn btn-danger btn-sm mt-2" onclick="RemoveLyrics(this)">Delete</button>`;
     // append the new form to the page
     document.getElementById("dynamic").appendChild(newForm);
-  let categ = document.getElementById('categorie');
-  let cat   =  document.getElementsByClassName('mb-3 categorie');
- for(let select of cat){ 
-    select.innerHTML = categ.innerHTML;
- }
 }
 function RemoveLyrics(button)
 {
