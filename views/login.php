@@ -10,12 +10,12 @@
                     <form method="post">
                         <div class="form-row">
                             <div class="col-lg-7">
-                                <input type="email" placeholder="Email-Address" name="email" id="email" class="form-control my-3 p-4" onkeyup="validate_email()">
+                                <input type="email" placeholder="Email-Address" name="email" id="email" class="form-control my-3 p-3" onkeyup="validate_email()">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col-lg-7">
-                                <input type="password" placeholder="*******" name="password" id="password" class="form-control my-3 p-4" onkeyup="validate_pw()">
+                                <input type="password" placeholder="*******" name="password" id="password" class="form-control my-3 p-3" onkeyup="validate_pw()">
                             </div>
                         </div>
                         <div class="form-row">
